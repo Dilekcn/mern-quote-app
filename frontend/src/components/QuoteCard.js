@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import QuoteVotes from "./QuoteVotes";
 
 function QuoteCard() {
   const [quote, setQuote] = useState([]);
@@ -38,7 +39,7 @@ function QuoteCard() {
           </div>
           <div className=" card-footer d-flex text-muted">
             <div className="p-1 flex-grow-1">
-              <button className="btn btn-none ">🧡</button>
+              <QuoteVotes />
             </div>
             <Link to="/update">
               <button className="btn btn-warning p-1 ">Edit</button>

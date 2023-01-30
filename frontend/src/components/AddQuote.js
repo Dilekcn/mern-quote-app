@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function AddQuote() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  console.log(quote);
-  // useEffect(() => {
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ quote: quotePost, author: authorPost }),
-  //   };
-  //   fetch("http://localhost:5000/quotes/add", requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data));
-  // }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
