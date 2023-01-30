@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function QuoteCard() {
   const [quote, setQuote] = useState([]);
@@ -6,7 +7,6 @@ function QuoteCard() {
   useEffect(() => {
     fetch("http://localhost:5000/quotes").then((quote) => {
       quote.json().then((res) => {
-        console.log(res[0].quote);
         setQuote(res);
       });
     });
@@ -40,7 +40,9 @@ function QuoteCard() {
             <div className="p-1 flex-grow-1">
               <button className="btn btn-none ">🧡</button>
             </div>
-            <button className="btn btn-warning p-1 mx-1">Edit</button>
+            <Link to="/update">
+              <button className="btn btn-warning p-1 ">Edit</button>
+            </Link>
             <button
               className="btn btn-warning p-1 mx-1"
               onClick={() => deleteQuote(quote._id)}
